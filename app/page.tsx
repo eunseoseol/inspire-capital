@@ -32,7 +32,7 @@ const TEAM = [
   {
     name: "Eunseo Seol",
     role: "Primer Venture Partner",
-    avatar: "/team/eunseo.jpg",
+    avatar: "/team/eunseoseol.png",
     links: [
       { label: "Threads", href: "https://www.threads.net/@eunseoseol" },
       { label: "Instagram", href: "https://www.instagram.com/eunseoseol" },
@@ -42,7 +42,7 @@ const TEAM = [
   {
     name: "Philip Yoo",
     role: "Founder, Cordia Studio",
-    avatar: "/team/phillip.jpg",
+    avatar: "/team/philipyoo.png",
     links: [
       { label: "Cordia Studio", href: "https://cordia.studio" },
       { label: "Instagram", href: "https://www.instagram.com/philiphyoo" },
@@ -102,21 +102,21 @@ export default function Page() {
 
       {/* Hero */}
       <section className="relative z-10 mx-auto max-w-6xl px-6 pt-16 pb-24 sm:pt-24 sm:pb-32">
-      <h1 className="text-5xl sm:text-7xl font-extrabold leading-[1.05]">
-  <span className="block text-white">Creator is</span>
-  <span
-    className="mt-2 block"
-    style={{
-      color: "#00FFD1",
-      textShadow: "0 0 20px rgba(0,255,209,1), 0 0 40px rgba(0,255,209,.9)",
-    }}
-  >
-    Eating the World
-  </span>
-</h1>
-
+        <h1 className="text-5xl sm:text-7xl font-extrabold leading-[1.05]">
+          <span className="block text-white">Creator is</span>
+          <span
+            className="mt-2 block"
+            style={{
+              color: "#00FFD1",
+              textShadow:
+                "0 0 20px rgba(0,255,209,1), 0 0 40px rgba(0,255,209,.9)",
+            }}
+          >
+            Eating the World
+          </span>
+        </h1>
         <p className="mt-6 max-w-2xl text-lg text-zinc-300">
-          인스파이어 캐피탈은 크리에이터를 차세대 창업가로 바라보고 투자합니다.
+          인스파이어 캐피탈은 크리에이터·AI·스마트리빙 교차점에서
           <span className="text-white font-medium"> 실험과 증명</span>에 투자합니다.
           작은 팀이 큰 파장을 만들 때를 가장 사랑합니다.
         </p>
@@ -235,28 +235,42 @@ export default function Page() {
         </div>
       </section>
 
-  const TEAM = [
-  {
-    name: "Eunseo Seol",
-    role: "Primer Venture Partner",
-    avatar: "/team/eunseoseol.png",
-    links: [
-      { label: "Threads", href: "https://www.threads.net/@eunseoseol" },
-      { label: "Instagram", href: "https://www.instagram.com/eunseoseol" },
-      { label: "X", href: "https://x.com/eunseoseol" },
-    ],
-  },
-  {
-    name: "Philip Yoo",
-    role: "Founder, Cordia Studio",
-    avatar: "/team/philipyoo.png",
-    links: [
-      { label: "Cordia Studio", href: "https://cordia.studio" },
-      { label: "Instagram", href: "https://www.instagram.com/philiphyoo" },
-    ],
-  },
-];
-
+      {/* Team */}
+      <section id="team" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
+        <div className="rounded-3xl border border-zinc-800 p-8 bg-zinc-900/40">
+          <h2 className="text-2xl font-semibold">Team</h2>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+            {TEAM.map((m) => (
+              <div key={m.name} className="rounded-2xl border border-zinc-800 p-5 bg-black/40">
+                <div className="flex items-center gap-4">
+                  <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-zinc-800">
+                    <Image alt={m.name} src={m.avatar} width={56} height={56} className="object-cover rounded-2xl" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white">{m.name}</p>
+                    <p className="text-xs text-zinc-400">{m.role}</p>
+                  </div>
+                </div>
+                {!!m.links?.length && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {m.links.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs rounded-full border border-zinc-700 px-2.5 py-1 text-zinc-300 hover:border-[#00FFD1] hover:text-[#00FFD1]"
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Contact */}
       <section id="contact" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
@@ -264,7 +278,6 @@ export default function Page() {
           <h2 className="text-2xl font-semibold">Contact</h2>
           <p className="mt-2 text-zinc-300">LP / 코파운더 / 포트폴리오 문의</p>
 
-          {/* Emails */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
               href="mailto:invest@inspire.capital"
@@ -280,7 +293,6 @@ export default function Page() {
             </a>
           </div>
 
-          {/* Office location */}
           <div className="mt-8">
             <p className="text-zinc-300">Office Location</p>
             <div className="mt-1 text-sm">
@@ -297,7 +309,6 @@ export default function Page() {
             </div>
 
             <div className="mt-4 w-full h-64 overflow-hidden rounded-xl border border-zinc-700">
-              {/* Using a coordinate-based embed for reliability */}
               <iframe
                 title="Inspire Capital Office Map"
                 src="https://www.google.com/maps?q=37.5348738,126.898845&z=16&output=embed"
