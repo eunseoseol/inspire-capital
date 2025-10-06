@@ -24,7 +24,7 @@ const PORTFOLIO = [
     name: "Next Gen",
     tag: "Venture Studio",
     logo: "/logos/nextgen.png",
-    url: "https://nextgen.kr",
+    url: "https://nextgen-academy-three.vercel.app",
   },
 ];
 
@@ -32,7 +32,7 @@ const TEAM = [
   {
     name: "Eunseo Seol",
     role: "Primer Venture Partner",
-    avatar: "/team/eunseoseol.png",
+    avatar: "/public/eunseoseol.png",
     links: [
       { label: "Threads", href: "https://www.threads.net/@eunseoseol" },
       { label: "Instagram", href: "https://www.instagram.com/eunseoseol" },
@@ -42,7 +42,7 @@ const TEAM = [
   {
     name: "Philip Yoo",
     role: "Founder, Cordia Studio",
-    avatar: "/team/philipyoo.png",
+    avatar: "/public/philipyoo.png",
     links: [
       { label: "Cordia Studio", href: "https://cordia.studio" },
       { label: "Instagram", href: "https://www.instagram.com/philiphyoo" },
@@ -116,9 +116,8 @@ export default function Page() {
           </span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-zinc-300">
-          인스파이어 캐피탈은 크리에이터·AI·스마트리빙 교차점에서
-          <span className="text-white font-medium"> 실험과 증명</span>에 투자합니다.
-          작은 팀이 큰 파장을 만들 때를 가장 사랑합니다.
+인스파이어 캐피탈은 크리에이터를 차세대 창업가로 바라보고 투자합니다.
+          
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <a
