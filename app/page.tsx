@@ -102,21 +102,21 @@ export default function Page() {
 
       {/* Hero */}
       <section className="relative z-10 mx-auto max-w-6xl px-6 pt-16 pb-24 sm:pt-24 sm:pb-32">
-        <h1 className="text-5xl sm:text-7xl font-extrabold leading-[1.05]">
-          <span className="block text-white">Back the</span>
-          <span
-            className="mt-2 block"
-            style={{
-              color: "#00FFD1",
-              textShadow:
-                "0 0 20px rgba(0,255,209,1), 0 0 40px rgba(0,255,209,.9)",
-            }}
-          >
-            Builders of the Next Era
-          </span>
-        </h1>
+      <h1 className="text-5xl sm:text-7xl font-extrabold leading-[1.05]">
+  <span className="block text-white">Creator is</span>
+  <span
+    className="mt-2 block"
+    style={{
+      color: "#00FFD1",
+      textShadow: "0 0 20px rgba(0,255,209,1), 0 0 40px rgba(0,255,209,.9)",
+    }}
+  >
+    Eating the World
+  </span>
+</h1>
+
         <p className="mt-6 max-w-2xl text-lg text-zinc-300">
-          인스파이어 캐피탈은 크리에이터·AI·스마트리빙 교차점에서
+          인스파이어 캐피탈은 크리에이터를 차세대 창업가로 바라보고 투자합니다.
           <span className="text-white font-medium"> 실험과 증명</span>에 투자합니다.
           작은 팀이 큰 파장을 만들 때를 가장 사랑합니다.
         </p>
