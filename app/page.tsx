@@ -5,106 +5,293 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// -------------------------
+// Editable site data
+// -------------------------
+const NAV = [
+  { label: "Thesis", href: "#thesis" },
+  { label: "Focus", href: "#focus" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Team", href: "#team" },
+  { label: "Contact", href: "#contact" },
+];
+
+const FOCUS = [
+  { title: "AI x Creator", desc: "도구, 미디어, 커머스가 결합된 차세대 제품." },
+  { title: "Infra & DevTools", desc: "작은 팀이 큰일을 하도록 만드는 기반 소프트웨어." },
+  { title: "Smart Living", desc: "모듈러 하우징, 로보틱스, 생활 OS." },
+];
+
+const PORTFOLIO = [
+  { name: "Fanding", tag: "Creator Commerce", logo: "/logos/fanding.png", url: "https://fanding.kr" },
+  { name: "Primer", tag: "Accelerator", logo: "/logos/primer.png", url: "https://primer.kr" },
+  { name: "EO Studio", tag: "Media", logo: "/logos/eo.png", url: "https://eostudiolab.com" },
+  // 추가 가능
+];
+
+const TEAM = [
+  {
+    name: "Eunseo Seol",
+    role: "Venture Partner",
+    avatar: "/team/eunseo.jpg",
+    links: [
+      { label: "Threads", href: "https://www.threads.net/@eunseoseol" },
+      { label: "Instagram", href: "https://www.instagram.com/eunseoseol" },
+      { label: "X", href: "https://x.com/eunseoseol" },
+    ],
+  },
+  // { name: "Your Name", role: "General Partner", avatar: "/team/you.jpg", links: [] },
+];
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Neon backdrop accents */}
+      {/* Neon backdrop accents (Inspire blue-green) */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full blur-3xl opacity-40" style={{background: "radial-gradient(40% 40% at 50% 50%, #7fff00 0%, rgba(127,255,0,0) 70%)"}} />
-        <div className="absolute top-1/2 -translate-y-1/2 -right-24 h-80 w-80 rounded-full blur-3xl opacity-30" style={{background: "radial-gradient(40% 40% at 50% 50%, #7fff00 0%, rgba(127,255,0,0) 70%)"}} />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#7fff00]/70 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#7fff00]/70 to-transparent" />
+        <div
+          className="absolute -top-24 -left-24 h-72 w-72 rounded-full blur-3xl opacity-40"
+          style={{
+            background:
+              "radial-gradient(40% 40% at 50% 50%, #00FFD1 0%, rgba(0,255,209,0) 70%)",
+          }}
+        />
+        <div
+          className="absolute top-1/2 -translate-y-1/2 -right-24 h-80 w-80 rounded-full blur-3xl opacity-30"
+          style={{
+            background:
+              "radial-gradient(40% 40% at 50% 50%, #7FFF00 0%, rgba(127,255,0,0) 70%)",
+          }}
+        />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#00FFD1]/70 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#7FFF00]/70 to-transparent" />
       </div>
 
-      {/* Grid overlay */}
-      <div aria-hidden className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(to_right,rgba(127,255,0,.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(127,255,0,.35)_1px,transparent_1px)] [background-size:40px_40px]" />
+      {/* Subtle grid overlay */}
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(to_right,rgba(0,255,209,.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,255,209,.35)_1px,transparent_1px)] [background-size:40px_40px]"
+      />
 
       {/* Nav */}
       <header className="relative z-10 mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
-        <Link href="#" className="font-semibold tracking-wide text-[#7fff00] hover:text-white transition">NEXT GEN</Link>
+        <Link
+          href="#"
+          className="flex items-center gap-2 group"
+          aria-label="Inspire Capital home"
+        >
+          {/* Wordmark */}
+          <span
+            className="font-semibold tracking-wide text-white group-hover:text-[#00FFD1] transition"
+            style={{ letterSpacing: "0.06em" }}
+          >
+            INSPIRE CAPITAL
+          </span>
+          <span className="h-2 w-2 rounded-full bg-[#00FFD1] shadow-[0_0_16px_rgba(0,255,209,1)]" />
+        </Link>
+
         <nav className="hidden sm:flex items-center gap-6 text-sm text-zinc-300">
-          <Link href="#about" className="hover:text-white">About</Link>
-          <Link href="#vision" className="hover:text-white">Vision</Link>
-          <Link href="#contact" className="hover:text-white">Contact</Link>
+          {NAV.map((n) => (
+            <Link key={n.href} href={n.href} className="hover:text-white">
+              {n.label}
+            </Link>
+          ))}
         </nav>
       </header>
 
       {/* Hero */}
       <section className="relative z-10 mx-auto max-w-6xl px-6 pt-16 pb-24 sm:pt-24 sm:pb-32">
         <h1 className="text-5xl sm:text-7xl font-extrabold leading-[1.05]">
-          <span className="block text-white">Build the</span>
-          <span className="mt-2 block text-[#7fff00]" style={{textShadow: "0 0 20px rgba(127,255,0,1), 0 0 40px rgba(127,255,0,.9)"}}>Next Generation</span>
+          <span className="block text-white">Back the</span>
+          <span
+            className="mt-2 block"
+            style={{
+              color: "#00FFD1",
+              textShadow:
+                "0 0 20px rgba(0,255,209,1), 0 0 40px rgba(0,255,209,.9)",
+            }}
+          >
+            Builders of the Next Era
+          </span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-zinc-300">
-          검은 배경 위에 연두 네온의 심장. <span className="text-white font-medium">Next Gen</span>은 창업가와 크리에이터를 위한 실험실입니다.
-          새로운 제품과 문화를 빠르게 만들고, 세상에 증명합니다.
+          인스파이어 캐피탈은 크리에이터·AI·스마트리빙 교차점에서
+          <span className="text-white font-medium"> 실험과 증명</span>에 투자합니다.
+          작은 팀이 큰 파장을 만들 때를 가장 사랑합니다.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Link
-            href="#contact"
-            className="group inline-flex items-center gap-2 rounded-2xl border border-[#7fff00]/60 bg-[#7fff00]/10 px-5 py-3 text-[#7fff00] hover:text-black hover:bg-[#7fff00]/80 hover:border-[#7fff00] transition"
-            style={{boxShadow: "0 0 30px rgba(127,255,0,.8), inset 0 0 16px rgba(127,255,0,.4)"}}
-          >
-            <span className="font-medium">네온 컨택트</span>
-            <svg className="h-4 w-4 translate-x-0 transition group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14"/>
-              <path d="M12 5l7 7-7 7"/>
-            </svg>
-          </Link>
-
-          {/* External Instagram */}
           <a
-            href="https://instagram.com/nextgen.kr"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900/60 px-5 py-3 text-zinc-200 hover:border-[#7fff00] hover:text-[#7fff00] transition"
+            href="mailto:invest@inspire.capital?subject=Pitch%20Deck"
+            className="group inline-flex items-center gap-2 rounded-2xl border border-[#00FFD1]/60 bg-[#00FFD1]/10 px-5 py-3 text-[#00FFD1] hover:text-black hover:bg-[#00FFD1]/80 hover:border-[#00FFD1] transition"
+            style={{
+              boxShadow:
+                "0 0 30px rgba(0,255,209,.8), inset 0 0 16px rgba(0,255,209,.35)",
+            }}
           >
-            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.8A6.2 6.2 0 1 0 18.2 14 6.2 6.2 0 0 0 12 7.8Zm0 2.4A3.8 3.8 0 1 1 8.2 14 3.8 3.8 0 0 1 12 10.2Zm6.5-4a1.1 1.1 0 1 0 1.1 1.1 1.1 1.1 0 0 0-1.1-1.1Z"/>
+            <span className="font-medium">Send Deck</span>
+            <svg
+              className="h-4 w-4 translate-x-0 transition group-hover:translate-x-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <path d="M5 12h14" />
+              <path d="M12 5l7 7-7 7" />
             </svg>
-            <span className="font-medium">@nextgen.kr</span>
           </a>
+
+          <Link
+            href="#thesis"
+            className="inline-flex items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900/60 px-5 py-3 text-zinc-200 hover:border-[#7FFF00] hover:text-[#7FFF00] transition"
+          >
+            Read Thesis
+          </Link>
         </div>
       </section>
 
-      {/* Founder card */}
-      <section id="about" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
+      {/* Thesis */}
+      <section id="thesis" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-[#7fff00]/60 bg-gradient-to-b from-zinc-900/60 to-zinc-900/20 p-6 backdrop-blur">
-            <h2 className="text-xl tracking-wide text-[#7fff00]">Founder</h2>
-            <p className="mt-2 text-3xl font-bold">송유빈</p>
-            <p className="mt-3 text-zinc-300 leading-relaxed">
-              사용자와 창업가가 진짜로 원하는 것을 빠르게 만들고 검증합니다. Next Gen은
-              프로토타입 → 베타 → 론치까지의 사이클을 네온처럼 선명하게, 짧게 가져갑니다.
+          <div className="rounded-3xl border border-[#00FFD1]/60 bg-gradient-to-b from-zinc-900/60 to-zinc-900/20 p-6 backdrop-blur">
+            <h2 className="text-xl tracking-wide text-[#00FFD1]">Investment Thesis</h2>
+            <p className="mt-3 text-3xl font-bold">Distribution × Product × Culture</p>
+            <p className="mt-4 text-zinc-300 leading-relaxed">
+              배포(Distribution)가 선행될 때 제품(Product)과 문화(Culture)가 빠르게 증명됩니다.
+              우리는 창업가와 크리에이터가 이 세 축을 함께 다루는 순간에 베팅합니다.
             </p>
             <div className="mt-6 flex gap-3">
-              <a href="https://instagram.com/nextgen.kr" target="_blank" rel="noreferrer" className="rounded-xl border border-[#7fff00]/60 px-4 py-2 text-sm text-[#7fff00] hover:bg-[#7fff00]/10">Instagram</a>
-              <Link href="#contact" className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-200 hover:border-[#7fff00]">Contact</Link>
+              <Link
+                href="#focus"
+                className="rounded-xl border border-[#00FFD1]/60 px-4 py-2 text-sm text-[#00FFD1] hover:bg-[#00FFD1]/10"
+              >
+                Our Focus
+              </Link>
+              <Link
+                href="#portfolio"
+                className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-200 hover:border-[#7FFF00]"
+              >
+                Portfolio
+              </Link>
             </div>
           </div>
+
           <div className="rounded-3xl border border-zinc-800 p-6 bg-zinc-900/30">
-            <h3 className="text-lg text-zinc-300">What we build</h3>
+            <h3 className="text-lg text-zinc-300">How we work</h3>
             <ul className="mt-3 space-y-3 text-zinc-300">
-              <li className="flex items-start gap-3"><span className="mt-1 h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_14px_rgba(127,255,0,1)]"/>네온 같은 간결함의 제품 경험</li>
-              <li className="flex items-start gap-3"><span className="mt-1 h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_14px_rgba(127,255,0,1)]"/>크리에이터 & 스타트업 도구</li>
-              <li className="flex items-start gap-3"><span className="mt-1 h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_14px_rgba(127,255,0,1)]"/>커뮤니티가 사랑하는 브랜드</li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[#00FFD1] shadow-[0_0_14px_rgba(0,255,209,1)]" />
+                0→1 실험 주기 단축, 데이 1 고객과의 공진화
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[#7FFF00] shadow-[0_0_14px_rgba(127,255,0,1)]" />
+                미디어·커뮤니티를 성장 엔진으로 활용
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-white/80" />
+                간결함과 속도에 집착하는 제품 미학
+              </li>
             </ul>
-            <div className="mt-6 rounded-xl border border-[#7fff00]/40 p-4 text-sm text-zinc-400">
-              Next.js + Tailwind 중심의 모던 스택. 빠른 배포, 데이터 기반 개선, 미학에 집착.
+            <div className="mt-6 rounded-xl border border-[#00FFD1]/40 p-4 text-sm text-zinc-400">
+              Stack: Next.js + Tailwind · 데이터 기반 개선 · 빠른 배포.
             </div>
           </div>
         </div>
       </section>
 
-      {/* Vision strip */}
-      <section id="vision" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
-        <div className="rounded-3xl border border-[#7fff00]/40 p-10 bg-gradient-to-br from-black to-zinc-900/60">
-          <h2 className="text-3xl sm:text-4xl font-bold">
-            미래는 <span className="text-[#7fff00]" style={{textShadow: "0 0 24px rgba(127,255,0,1)"}}>만드는 자</span>의 것
-          </h2>
-          <p className="mt-4 max-w-3xl text-zinc-300">
-            사용자 문제를 레이저처럼 관통하는 솔루션. Next Gen은 작은 팀으로 큰 임팩트를 만듭니다.
-          </p>
+      {/* Focus */}
+      <section id="focus" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
+        <div className="rounded-3xl border border-[#00FFD1]/40 p-10 bg-gradient-to-br from-black to-zinc-900/60">
+          <h2 className="text-3xl sm:text-4xl font-bold">Focus</h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            {FOCUS.map((f) => (
+              <div
+                key={f.title}
+                className="rounded-2xl border border-zinc-800/80 bg-zinc-900/50 p-5 hover:border-[#00FFD1]/60 transition"
+              >
+                <p className="text-lg font-semibold text-white">{f.title}</p>
+                <p className="mt-2 text-zinc-400 text-sm">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio */}
+      <section id="portfolio" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
+        <div className="flex items-center justify-between gap-4 mb-6">
+          <h2 className="text-2xl font-semibold">Portfolio</h2>
+          <Link
+            href="#contact"
+            className="text-sm text-[#00FFD1] hover:underline underline-offset-4"
+          >
+            Pitch us →
+          </Link>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          {PORTFOLIO.map((c) => (
+            <a
+              key={c.name}
+              href={c.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:border-[#00FFD1]/60 transition"
+            >
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-xl bg-black/60 border border-zinc-800 grid place-items-center overflow-hidden">
+                  <Image
+                    alt={`${c.name} logo`}
+                    src={c.logo}
+                    width={24}
+                    height={24}
+                  />
+                </div>
+                <div>
+                  <p className="font-medium text-white">{c.name}</p>
+                  <p className="text-xs text-zinc-400">{c.tag}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Team */}
+      <section id="team" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
+        <div className="rounded-3xl border border-zinc-800 p-8 bg-zinc-900/40">
+          <h2 className="text-2xl font-semibold">Team</h2>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+            {TEAM.map((m) => (
+              <div key={m.name} className="rounded-2xl border border-zinc-800 p-5 bg-black/40">
+                <div className="flex items-center gap-4">
+                  <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-zinc-800">
+                    <Image alt={m.name} src={m.avatar} fill className="object-cover" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white">{m.name}</p>
+                    <p className="text-xs text-zinc-400">{m.role}</p>
+                  </div>
+                </div>
+                {!!m.links?.length && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {m.links.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs rounded-full border border-zinc-700 px-2.5 py-1 text-zinc-300 hover:border-[#00FFD1] hover:text-[#00FFD1]"
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -112,30 +299,28 @@ export default function Page() {
       <section id="contact" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
         <div className="rounded-3xl border border-zinc-800 p-8 bg-zinc-900/40">
           <h2 className="text-2xl font-semibold">Contact</h2>
-          <p className="mt-2 text-zinc-300">콜라보 / 제휴 / 채용 문의</p>
+          <p className="mt-2 text-zinc-300">LP / 코파운더 / 포트폴리오 문의</p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
-              href="mailto:hello@nextgen.kr"
-              className="rounded-2xl border border-[#7fff00]/60 bg-[#7fff00]/10 px-5 py-3 text-[#7fff00] hover:bg-[#7fff00]/30"
+              href="mailto:invest@inspire.capital"
+              className="rounded-2xl border border-[#00FFD1]/60 bg-[#00FFD1]/10 px-5 py-3 text-[#00FFD1] hover:bg-[#00FFD1]/30"
             >
-              hello@nextgen.kr
+              invest@inspire.capital
             </a>
             <a
-              href="https://instagram.com/nextgen.kr"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-2xl border border-zinc-700 bg-zinc-900/60 px-5 py-3 text-zinc-200 hover:border-[#7fff00] hover:text-[#7fff00]"
+              href="mailto:jobs@inspire.capital"
+              className="rounded-2xl border border-zinc-700 bg-zinc-900/60 px-5 py-3 text-zinc-200 hover:border-[#7FFF00] hover:text-[#7FFF00]"
             >
-              Instagram @nextgen.kr
+              jobs@inspire.capital
             </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 mx-auto max-w-6xl px-6 pb-10 flex items-center justify-between text-xs text-zinc-500">
-        <span>© {new Date().getFullYear()} Next Gen. All rights reserved.</span>
-        <span className="text-[#7fff00]">Made with Next.js</span>
+      <footer className="relative z-10 mx-auto max-w-6xl px-6 pb-10 flex flex-col sm:flex-row gap-2 sm:gap-0 items-start sm:items-center justify-between text-xs text-zinc-500">
+        <span>© {new Date().getFullYear()} Inspire Capital. All rights reserved.</span>
+        <span className="text-[#00FFD1]">Made with Next.js</span>
       </footer>
     </main>
   );
