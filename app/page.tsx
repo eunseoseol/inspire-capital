@@ -32,7 +32,7 @@ const TEAM = [
   {
     name: "Eunseo Seol",
     role: "Primer Venture Partner",
-    avatar: "/public/eunseoseol.png",
+    avatar: "/eunseoseol.png",
     links: [
       { label: "Threads", href: "https://www.threads.net/@eunseoseol" },
       { label: "Instagram", href: "https://www.instagram.com/eunseoseol" },
@@ -42,7 +42,7 @@ const TEAM = [
   {
     name: "Philip Yoo",
     role: "Founder, Cordia Studio",
-    avatar: "/public/philipyoo.png",
+    avatar: "/philipyoo.png",
     links: [
       { label: "Cordia Studio", href: "https://cordia.studio" },
       { label: "Instagram", href: "https://www.instagram.com/philiphyoo" },
