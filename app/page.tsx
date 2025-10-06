@@ -52,11 +52,11 @@ const TEAM = [
 
 // Backend Partners with links (슬라이더)
 const PARTNERS = [
-  { name: "EO Studio", logo: "/logos/eo.png", url: "https://eostudio.io" },
-  { name: "Primer", logo: "/logos/primer.png", url: "https://primer.kr" },
-  { name: "Marpple Corp", logo: "/logos/marpple.png", url: "https://www.marpplecorp.com" },
-  { name: "ZVZO", logo: "/logos/zvzo.png", url: "https://doerscorp.notion.site/ZVZO-6b2b76ec3f0f42fb8e74bf4ccec401e1" },
-  { name: "Workmore", logo: "/logos/workmore.png", url: "https://www.workmore.org" },
+  { name: "EO Studio", logo: "/logo/eo.png", url: "https://eostudio.io" },
+  { name: "Primer", logo: "/logo/primer.png", url: "https://primer.kr" },
+  { name: "Marpple Corp", logo: "/logo/marpple.png", url: "https://www.marpplecorp.com" },
+  { name: "ZVZO", logo: "/logo/zvzo.png", url: "https://doerscorp.notion.site/ZVZO-6b2b76ec3f0f42fb8e74bf4ccec401e1" },
+  { name: "Workmore", logo: "/logo/workmore.png", url: "https://www.workmore.org" },
 ];
 
 export default function Page() {
