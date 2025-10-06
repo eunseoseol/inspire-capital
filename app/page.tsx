@@ -5,9 +5,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-// -------------------------
-// Editable site data
-// -------------------------
 const NAV = [
   { label: "Thesis", href: "#thesis" },
   { label: "Focus", href: "#focus" },
@@ -23,16 +20,18 @@ const FOCUS = [
 ];
 
 const PORTFOLIO = [
-  { name: "Fanding", tag: "Creator Commerce", logo: "/logos/fanding.png", url: "https://fanding.kr" },
-  { name: "Primer", tag: "Accelerator", logo: "/logos/primer.png", url: "https://primer.kr" },
-  { name: "EO Studio", tag: "Media", logo: "/logos/eo.png", url: "https://eostudiolab.com" },
-  // 추가 가능
+  {
+    name: "Next Gen",
+    tag: "Venture Studio",
+    logo: "/logos/nextgen.png",
+    url: "https://nextgen.kr",
+  },
 ];
 
 const TEAM = [
   {
     name: "Eunseo Seol",
-    role: "Venture Partner",
+    role: "Primer Venture Partner",
     avatar: "/team/eunseo.jpg",
     links: [
       { label: "Threads", href: "https://www.threads.net/@eunseoseol" },
@@ -40,13 +39,21 @@ const TEAM = [
       { label: "X", href: "https://x.com/eunseoseol" },
     ],
   },
-  // { name: "Your Name", role: "General Partner", avatar: "/team/you.jpg", links: [] },
+  {
+    name: "Philip Yoo",
+    role: "Founder, Cordia Studio",
+    avatar: "/team/phillip.jpg",
+    links: [
+      { label: "Cordia Studio", href: "https://cordia.studio" },
+      { label: "Instagram", href: "https://www.instagram.com/philiphyoo" },
+    ],
+  },
 ];
 
 export default function Page() {
   return (
     <main className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Neon backdrop accents (Inspire blue-green) */}
+      {/* Neon backdrop accents */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div
           className="absolute -top-24 -left-24 h-72 w-72 rounded-full blur-3xl opacity-40"
@@ -66,7 +73,7 @@ export default function Page() {
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#7FFF00]/70 to-transparent" />
       </div>
 
-      {/* Subtle grid overlay */}
+      {/* Grid overlay */}
       <div
         aria-hidden
         className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(to_right,rgba(0,255,209,.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,255,209,.35)_1px,transparent_1px)] [background-size:40px_40px]"
@@ -74,12 +81,7 @@ export default function Page() {
 
       {/* Nav */}
       <header className="relative z-10 mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
-        <Link
-          href="#"
-          className="flex items-center gap-2 group"
-          aria-label="Inspire Capital home"
-        >
-          {/* Wordmark */}
+        <Link href="#" className="flex items-center gap-2 group" aria-label="Inspire Capital home">
           <span
             className="font-semibold tracking-wide text-white group-hover:text-[#00FFD1] transition"
             style={{ letterSpacing: "0.06em" }}
@@ -162,31 +164,17 @@ export default function Page() {
               배포(Distribution)가 선행될 때 제품(Product)과 문화(Culture)가 빠르게 증명됩니다.
               우리는 창업가와 크리에이터가 이 세 축을 함께 다루는 순간에 베팅합니다.
             </p>
-            <div className="mt-6 flex gap-3">
-              <Link
-                href="#focus"
-                className="rounded-xl border border-[#00FFD1]/60 px-4 py-2 text-sm text-[#00FFD1] hover:bg-[#00FFD1]/10"
-              >
-                Our Focus
-              </Link>
-              <Link
-                href="#portfolio"
-                className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-200 hover:border-[#7FFF00]"
-              >
-                Portfolio
-              </Link>
-            </div>
           </div>
 
           <div className="rounded-3xl border border-zinc-800 p-6 bg-zinc-900/30">
             <h3 className="text-lg text-zinc-300">How we work</h3>
             <ul className="mt-3 space-y-3 text-zinc-300">
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[#00FFD1] shadow-[0_0_14px_rgba(0,255,209,1)]" />
+                <span className="mt-1 h-2 w-2 rounded-full bg-[#00FFD1]" />
                 0→1 실험 주기 단축, 데이 1 고객과의 공진화
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[#7FFF00] shadow-[0_0_14px_rgba(127,255,0,1)]" />
+                <span className="mt-1 h-2 w-2 rounded-full bg-[#7FFF00]" />
                 미디어·커뮤니티를 성장 엔진으로 활용
               </li>
               <li className="flex items-start gap-3">
@@ -223,12 +211,6 @@ export default function Page() {
       <section id="portfolio" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
         <div className="flex items-center justify-between gap-4 mb-6">
           <h2 className="text-2xl font-semibold">Portfolio</h2>
-          <Link
-            href="#contact"
-            className="text-sm text-[#00FFD1] hover:underline underline-offset-4"
-          >
-            Pitch us →
-          </Link>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {PORTFOLIO.map((c) => (
@@ -241,12 +223,7 @@ export default function Page() {
             >
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-xl bg-black/60 border border-zinc-800 grid place-items-center overflow-hidden">
-                  <Image
-                    alt={`${c.name} logo`}
-                    src={c.logo}
-                    width={24}
-                    height={24}
-                  />
+                  <Image alt={`${c.name} logo`} src={c.logo} width={24} height={24} />
                 </div>
                 <div>
                   <p className="font-medium text-white">{c.name}</p>
@@ -267,7 +244,8 @@ export default function Page() {
               <div key={m.name} className="rounded-2xl border border-zinc-800 p-5 bg-black/40">
                 <div className="flex items-center gap-4">
                   <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-zinc-800">
-                    <Image alt={m.name} src={m.avatar} fill className="object-cover" />
+                    {/* Using width/height to avoid layout warnings without sizes prop */}
+                    <Image alt={m.name} src={m.avatar} width={56} height={56} className="object-cover rounded-2xl" />
                   </div>
                   <div>
                     <p className="font-semibold text-white">{m.name}</p>
@@ -300,6 +278,8 @@ export default function Page() {
         <div className="rounded-3xl border border-zinc-800 p-8 bg-zinc-900/40">
           <h2 className="text-2xl font-semibold">Contact</h2>
           <p className="mt-2 text-zinc-300">LP / 코파운더 / 포트폴리오 문의</p>
+
+          {/* Emails */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
               href="mailto:invest@inspire.capital"
@@ -313,6 +293,37 @@ export default function Page() {
             >
               jobs@inspire.capital
             </a>
+          </div>
+
+          {/* Office location */}
+          <div className="mt-8">
+            <p className="text-zinc-300">Office Location</p>
+            <div className="mt-1 text-sm">
+              <p className="text-white">헤일스튜디오 (Halestudio)</p>
+              <p className="text-zinc-400">서울 영등포구 5가 33-6, 12층</p>
+              <a
+                href="https://maps.app.goo.gl/h6D1HffA5DDMU2QH7"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block mt-2 text-[#00FFD1] hover:underline underline-offset-4"
+              >
+                Open in Google Maps →
+              </a>
+            </div>
+
+            <div className="mt-4 w-full h-64 overflow-hidden rounded-xl border border-zinc-700">
+              {/* Using a coordinate-based embed for reliability */}
+              <iframe
+                title="Inspire Capital Office Map"
+                src="https://www.google.com/maps?q=37.5348738,126.898845&z=16&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
       </section>
