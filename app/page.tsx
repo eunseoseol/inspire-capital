@@ -5,29 +5,13 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// 네비게이션: 남아있는 섹션만 노출 (Team, Contact)
 const NAV = [
-  { label: "Thesis", href: "#thesis" },
-  { label: "Focus", href: "#focus" },
-  { label: "Portfolio", href: "#portfolio" },
   { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ];
 
-const FOCUS = [
-  { title: "AI x Creator", desc: "도구, 미디어, 커머스가 결합된 차세대 제품." },
-  { title: "Infra & DevTools", desc: "작은 팀이 큰일을 하도록 만드는 기반 소프트웨어." },
-  { title: "Smart Living", desc: "모듈러 하우징, 로보틱스, 생활 OS." },
-];
-
-const PORTFOLIO = [
-  {
-    name: "Next Gen",
-    tag: "Venture Studio",
-    logo: "/logos/nextgen.png",
-    url: "https://nextgen-academy-three.vercel.app",
-  },
-];
-
+// Team
 const TEAM = [
   {
     name: "Eunseo Seol",
@@ -50,13 +34,15 @@ const TEAM = [
   },
 ];
 
-// Backend Partners with links (슬라이더)
+// Backed by (슬라이더) — cordia.png, nextgen.png 추가
 const PARTNERS = [
   { name: "EO Studio", logo: "eo.png", url: "https://eostudio.io" },
   { name: "Primer", logo: "primer.png", url: "https://primer.kr" },
   { name: "Marpple Corp", logo: "marpple.png", url: "https://www.marpplecorp.com" },
   { name: "ZVZO", logo: "zvzo.png", url: "https://doerscorp.notion.site/ZVZO-6b2b76ec3f0f42fb8e74bf4ccec401e1" },
   { name: "Workmore", logo: "workmore.png", url: "https://www.workmore.org" },
+  { name: "Cordia Studio", logo: "cordia.png", url: "https://cordia.studio" },
+  { name: "Next Gen", logo: "nextgen.png", url: "https://nextgen-academy-three.vercel.app" },
 ];
 
 export default function Page() {
@@ -153,16 +139,16 @@ export default function Page() {
           </a>
 
           <Link
-            href="#thesis"
+            href="#team"
             className="inline-flex items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900/60 px-5 py-3 text-zinc-200 hover:border-[#7FFF00] hover:text-[#7FFF00] transition"
           >
-            Read Thesis
+            Meet the Team
           </Link>
         </div>
       </section>
 
-      {/* Backend Partners — Auto-scrolling Logos */}
-      <section className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
+      {/* Backed by — Auto-scrolling Logos */}
+      <section id="backed" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
         <div className="mb-6 flex items-center gap-2">
           <div className="h-px w-8 bg-[#00FFD1]/60" />
           <p className="text-sm text-zinc-400">Backed by builders</p>
@@ -204,101 +190,6 @@ export default function Page() {
               </a>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Thesis */}
-      <section id="thesis" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-[#00FFD1]/60 bg-gradient-to-b from-zinc-900/60 to-zinc-900/20 p-6 backdrop-blur">
-            <h2 className="text-xl tracking-wide text-[#00FFD1]">Investment Thesis</h2>
-            <p className="mt-3 text-3xl font-bold">Distribution × Product × Culture</p>
-            <p className="mt-4 text-zinc-300 leading-relaxed">
-              배포(Distribution)가 선행될 때 제품(Product)과 문화(Culture)가 빠르게 증명됩니다.
-              우리는 창업가와 크리에이터가 이 세 축을 함께 다루는 순간에 베팅합니다.
-            </p>
-            <div className="mt-6 flex gap-3">
-              <Link
-                href="#focus"
-                className="rounded-xl border border-[#00FFD1]/60 px-4 py-2 text-sm text-[#00FFD1] hover:bg-[#00FFD1]/10"
-              >
-                Our Focus
-              </Link>
-              <Link
-                href="#portfolio"
-                className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-200 hover:border-[#7FFF00]"
-              >
-                Portfolio
-              </Link>
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-zinc-800 p-6 bg-zinc-900/30">
-            <h3 className="text-lg text-zinc-300">How we work</h3>
-            <ul className="mt-3 space-y-3 text-zinc-300">
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[#00FFD1]" />
-                0→1 실험 주기 단축, 데이 1 고객과의 공진화
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[#7FFF00]" />
-                미디어·커뮤니티를 성장 엔진으로 활용
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-white/80" />
-                간결함과 속도에 집착하는 제품 미학
-              </li>
-            </ul>
-            <div className="mt-6 rounded-xl border border-[#00FFD1]/40 p-4 text-sm text-zinc-400">
-              Stack: Next.js + Tailwind · 데이터 기반 개선 · 빠른 배포.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Focus */}
-      <section id="focus" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
-        <div className="rounded-3xl border border-[#00FFD1]/40 p-10 bg-gradient-to-br from-black to-zinc-900/60">
-          <h2 className="text-3xl sm:text-4xl font-bold">Focus</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            {FOCUS.map((f) => (
-              <div
-                key={f.title}
-                className="rounded-2xl border border-zinc-800/80 bg-zinc-900/50 p-5 hover:border-[#00FFD1]/60 transition"
-              >
-                <p className="text-lg font-semibold text-white">{f.title}</p>
-                <p className="mt-2 text-zinc-400 text-sm">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio */}
-      <section id="portfolio" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
-        <div className="flex items-center justify-between gap-4 mb-6">
-          <h2 className="text-2xl font-semibold">Portfolio</h2>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {PORTFOLIO.map((c) => (
-            <a
-              key={c.name}
-              href={c.url}
-              target="_blank"
-              rel="noreferrer"
-              className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:border-[#00FFD1]/60 transition"
-            >
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-xl bg-black/60 border border-zinc-800 grid place-items-center overflow-hidden">
-                  <Image alt={`${c.name} logo`} src={c.logo} width={24} height={24} />
-                </div>
-                <div>
-                  <p className="font-medium text-white">{c.name}</p>
-                  <p className="text-xs text-zinc-400">{c.tag}</p>
-                </div>
-              </div>
-            </a>
-          ))}
         </div>
       </section>
 
