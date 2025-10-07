@@ -308,17 +308,50 @@ export default function Page() {
             </a>
           </div>
 
-         <div className="mt-8">
-  <p className="text-zinc-300">Office Location</p>
-  <div className="mt-1 text-sm">
-    <p className="text-white">헤일스튜디오 (Halestudio)</p>
-    <p className="text-zinc-400">서울 영등포구 5가 33-6, 12층</p>
-    <a
-      href="https://maps.app.goo.gl/h6D1HffA5DDMU2QH7"
-      target="_blank"
-      rel="noreferrer"
-      className="inline-block mt-2 text-[#00FFD1] hover:underline underline-offset-4"
-    >
-      Open in Google Maps →
-    </a>
-  </div>
+          <div className="mt-8">
+            <p className="text-zinc-300">Office Location</p>
+            <div className="mt-1 text-sm">
+              <p className="text-white">헤일스튜디오 (Halestudio)</p>
+              <p className="text-zinc-400">서울 영등포구 5가 33-6, 12층</p>
+              <a
+                href="https://maps.app.goo.gl/h6D1HffA5DDMU2QH7"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block mt-2 text-[#00FFD1] hover:underline underline-offset-4"
+              >
+                Open in Google Maps →
+              </a>
+            </div>
+
+            <div className="mt-4 w-full h-64 overflow-hidden rounded-xl border border-zinc-700">
+              <iframe
+                title="Inspire Capital Office Map"
+                src="https://www.google.com/maps?q=37.5348738,126.898845&z=16&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="relative z-10 mx-auto max-w-6xl px-6 pb-10 flex flex-col sm:flex-row gap-2 sm:gap-0 items-start sm:items-center justify-between text-xs text-zinc-500">
+        <span>© {new Date().getFullYear()} Inspire Capital. All rights reserved.</span>
+        <span className="text-[#00FFD1]">Made with Next.js</span>
+      </footer>
+
+      {/* 🔧 Keyframes (컴포넌트에 포함) */}
+      <style jsx global>{`
+        @keyframes logo-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
+    </main>
+  );
+}
