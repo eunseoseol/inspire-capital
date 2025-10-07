@@ -34,7 +34,7 @@ const TEAM = [
   },
 ];
 
-// Backed by (슬라이더) — cordia.png, nextgen.png 추가
+// Backed by (슬라이더) — cordia.png, nextgen.png, teamcookie.png 추가
 const PARTNERS = [
   { name: "EO Studio", logo: "eo.png", url: "https://eostudio.io" },
   { name: "Primer", logo: "primer.png", url: "https://primer.kr" },
@@ -43,6 +43,7 @@ const PARTNERS = [
   { name: "Workmore", logo: "workmore.png", url: "https://www.workmore.org" },
   { name: "Cordia Studio", logo: "cordia.png", url: "https://cordia.studio" },
   { name: "Next Gen", logo: "nextgen.png", url: "https://nextgen-academy-three.vercel.app" },
+  { name: "Team Cookie", logo: "teamcookie.png", url: "#" }, // 링크 모르면 임시 '#'
 ];
 
 export default function Page() {
