@@ -308,6 +308,17 @@ export default function Page() {
             </a>
           </div>
 
-          <div className="mt-8">
-            <p className="text-zinc-300">Office Location</p>
-            <div className="mt-
+         <div className="mt-8">
+  <p className="text-zinc-300">Office Location</p>
+  <div className="mt-1 text-sm">
+    <p className="text-white">헤일스튜디오 (Halestudio)</p>
+    <p className="text-zinc-400">서울 영등포구 5가 33-6, 12층</p>
+    <a
+      href="https://maps.app.goo.gl/h6D1HffA5DDMU2QH7"
+      target="_blank"
+      rel="noreferrer"
+      className="inline-block mt-2 text-[#00FFD1] hover:underline underline-offset-4"
+    >
+      Open in Google Maps →
+    </a>
+  </div>
