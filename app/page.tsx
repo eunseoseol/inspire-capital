@@ -106,18 +106,20 @@ export default function Page() {
         </nav>
       </header>
 
-   {/* Hero */}
+{/* Hero Section */}
 <section className="relative z-10 h-[90vh] w-full overflow-hidden flex items-center justify-center text-center">
-  {/* 배경 영상 */}
+  {/* Google Drive 비디오 */}
   <video
     autoPlay
     muted
     loop
     playsInline
     className="absolute inset-0 h-full w-full object-cover"
-    poster="/fallback.jpg" // 비디오 로드 전 썸네일 (원하면 제거 가능)
   >
-    <source src="/manhattan.mp4" type="video/mp4" />
+    <source
+      src="https://drive.google.com/uc?export=download&id=1OYSxPKzgsPloxXon57187ttVbtAN5VrO"
+      type="video/mp4"
+    />
   </video>
 
   {/* 어두운 오버레이 */}
@@ -138,33 +140,6 @@ export default function Page() {
     <p className="mt-6 text-zinc-200 max-w-xl mx-auto text-lg">
       인스파이어 캐피탈은 크리에이터를 차세대 창업가로 바라보고 투자합니다.
     </p>
-
-    <div className="mt-10 flex flex-wrap justify-center items-center gap-4">
-      <a
-        href="mailto:invest@inspire.capital?subject=Pitch%20Deck"
-        className="group inline-flex items-center gap-2 rounded-2xl border border-white/70 bg-white/10 px-5 py-3 text-white hover:bg-white hover:text-black transition"
-      >
-        <span className="font-medium">Send Deck</span>
-        <svg
-          className="h-4 w-4 translate-x-0 transition group-hover:translate-x-0.5"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M5 12h14" />
-          <path d="M12 5l7 7-7 7" />
-        </svg>
-      </a>
-      <Link
-        href="#features"
-        className="inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-black/40 px-5 py-3 text-zinc-200 hover:border-[#00FFD1] hover:text-[#00FFD1] transition"
-      >
-        Our Features
-      </Link>
-    </div>
   </div>
 </section>
 
