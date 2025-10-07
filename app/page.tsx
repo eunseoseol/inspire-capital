@@ -106,57 +106,68 @@ export default function Page() {
         </nav>
       </header>
 
-      {/* Hero */}
-      <section className="relative z-10 mx-auto max-w-6xl px-6 pt-16 pb-10 sm:pt-24 sm:pb-16">
-        <h1 className="text-[44px] sm:text-7xl font-extrabold leading-[1.05] tracking-[-0.01em]">
-          <span className="block text-white">Creator is</span>
-          <span
-            className="mt-2 block"
-            style={{
-              color: "#00FFD1",
-              textShadow:
-                "0 0 24px rgba(0,255,209,1), 0 0 48px rgba(0,255,209,.9)",
-            }}
-          >
-            Eating the World
-          </span>
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg text-zinc-300">
-          인스파이어 캐피탈은 크리에이터를 차세대 창업가로 바라보고 투자합니다.
-        </p>
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <a
-            href="mailto:invest@inspire.capital?subject=Pitch%20Deck"
-            className="group inline-flex items-center gap-2 rounded-2xl border border-[#00FFD1]/60 bg-[#00FFD1]/10 px-5 py-3 text-[#00FFD1] hover:text-black hover:bg-[#00FFD1]/80 hover:border-[#00FFD1] transition"
-            style={{
-              boxShadow:
-                "0 0 30px rgba(0,255,209,.8), inset 0 0 16px rgba(0,255,209,.35)",
-            }}
-          >
-            <span className="font-medium">Send Deck</span>
-            <svg
-              className="h-4 w-4 translate-x-0 transition group-hover:translate-x-0.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden
-            >
-              <path d="M5 12h14" />
-              <path d="M12 5l7 7-7 7" />
-            </svg>
-          </a>
+   {/* Hero */}
+<section className="relative z-10 h-[90vh] w-full overflow-hidden flex items-center justify-center text-center">
+  {/* 배경 영상 */}
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 h-full w-full object-cover"
+    poster="/fallback.jpg" // 비디오 로드 전 썸네일 (원하면 제거 가능)
+  >
+    <source src="/manhattan.mp4" type="video/mp4" />
+  </video>
 
-          <Link
-            href="#features"
-            className="inline-flex items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900/60 px-5 py-3 text-zinc-200 hover:border-[#7FFF00] hover:text-[#7FFF00] transition"
-          >
-            Our Features
-          </Link>
-        </div>
-      </section>
+  {/* 어두운 오버레이 */}
+  <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+
+  {/* 텍스트 */}
+  <div className="relative z-10 px-6">
+    <h1
+      className="text-5xl sm:text-7xl font-extrabold leading-[1.05] tracking-tight text-white"
+      style={{
+        textShadow:
+          "0 0 25px rgba(255,255,255,0.8), 0 0 60px rgba(255,255,255,0.4)",
+      }}
+    >
+      Creator is <br />
+      <span className="block mt-2">Eating the World</span>
+    </h1>
+    <p className="mt-6 text-zinc-200 max-w-xl mx-auto text-lg">
+      인스파이어 캐피탈은 크리에이터를 차세대 창업가로 바라보고 투자합니다.
+    </p>
+
+    <div className="mt-10 flex flex-wrap justify-center items-center gap-4">
+      <a
+        href="mailto:invest@inspire.capital?subject=Pitch%20Deck"
+        className="group inline-flex items-center gap-2 rounded-2xl border border-white/70 bg-white/10 px-5 py-3 text-white hover:bg-white hover:text-black transition"
+      >
+        <span className="font-medium">Send Deck</span>
+        <svg
+          className="h-4 w-4 translate-x-0 transition group-hover:translate-x-0.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M5 12h14" />
+          <path d="M12 5l7 7-7 7" />
+        </svg>
+      </a>
+      <Link
+        href="#features"
+        className="inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-black/40 px-5 py-3 text-zinc-200 hover:border-[#00FFD1] hover:text-[#00FFD1] transition"
+      >
+        Our Features
+      </Link>
+    </div>
+  </div>
+</section>
+
 
       {/* Features (특징 3가지) */}
       <section id="features" className="relative z-10 mx-auto max-w-6xl px-6 pb-20">
