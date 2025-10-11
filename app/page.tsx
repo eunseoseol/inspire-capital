@@ -89,9 +89,7 @@ export default function Page() {
       <section className="relative z-10 mx-auto max-w-6xl px-6 py-24">
         <h2 className="text-4xl font-bold mb-6 text-center">Why Creator Economy?</h2>
         <div className="text-center text-lg text-zinc-300 leading-relaxed max-w-3xl mx-auto">
-          <p>1세대: Operating System — Windows</p>
-          <p>2세대: Social Media — Facebook</p>
-          <p>3세대: Creator Economy — You</p>
+        
           <p className="mt-6 text-zinc-400">
             기술의 패러다임은 점점 개인의 창조력으로 이동하고 있습니다.  
             인스파이어 캐피탈은 그 변화의 최전선에서 크리에이터 기반 IP 비즈니스에 투자합니다.
