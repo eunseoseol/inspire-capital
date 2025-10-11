@@ -113,47 +113,48 @@ export default function Page() {
       </section>
 
       {/* 🚀 Backed By (grid + fallback) */}
-      <section className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
-        <div className="text-center mb-6">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-2">Backed by</h2>
-          <p className="text-zinc-400 text-sm">Builders. Dreamers. Doers.</p>
-          <p className="mt-2 text-xs text-zinc-500">
-            Loaded partners: <span className="font-mono">{PARTNERS.length}</span>
-          </p>
-        </div>
+   {/* 🚀 Backed By (square + 2.5x) */}
+<section className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
+  <div className="text-center mb-6">
+    <h2 className="text-3xl sm:text-4xl font-bold mb-2">Backed by</h2>
+    <p className="text-zinc-400 text-sm">Builders. Dreamers. Doers.</p>
+    <p className="mt-2 text-xs text-zinc-500">
+      Loaded partners: <span className="font-mono">{PARTNERS.length}</span>
+    </p>
+  </div>
 
-        <div className="relative rounded-2xl border border-zinc-800 bg-zinc-900/60 px-4 py-6 overflow-x-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 place-items-center">
-            {PARTNERS.map((p) => (
-              <a
-                key={p.name}
-                href={p.url}
-                target="_blank"
-                rel="noreferrer"
-                className="w-[180px] h-[72px] flex items-center justify-center rounded-xl bg-black/30 border border-zinc-800 hover:border-[#00FFD1]/60 transition"
-                title={p.name}
-              >
-                <img
-                  src={`/${p.logo}`}
-                  alt={p.name}
-                  className="max-h-14 max-w-[160px] object-contain"
-                  onError={(e) => {
-                    const el = e.currentTarget;
-                    el.style.display = "none";
-                    const parent = el.parentElement;
-                    if (parent && !parent.querySelector(".logo-fallback")) {
-                      const div = document.createElement("div");
-                      div.className = "logo-fallback text-[10px] leading-tight text-red-400 p-2 text-center";
-                      div.textContent = `Missing: /public/${p.logo}`;
-                      parent.appendChild(div);
-                    }
-                  }}
-                />
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+  <div className="relative rounded-2xl border border-zinc-800 bg-zinc-900/60 px-4 py-6 overflow-x-auto">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 place-items-center">
+      {PARTNERS.map((p) => (
+        <a
+          key={p.name}
+          href={p.url}
+          target="_blank"
+          rel="noreferrer"
+          className="w-[180px] h-[180px] flex items-center justify-center rounded-2xl bg-black/30 border border-zinc-800 hover:border-[#00FFD1]/60 transition"
+          title={p.name}
+        >
+          <img
+            src={`/${p.logo}`}
+            alt={p.name}
+            className="h-[140px] w-[140px] object-contain"
+            onError={(e) => {
+              const el = e.currentTarget;
+              el.style.display = "none";
+              const parent = el.parentElement;
+              if (parent && !parent.querySelector(".logo-fallback")) {
+                const div = document.createElement("div");
+                div.className = "logo-fallback text-[10px] leading-tight text-red-400 p-2 text-center";
+                div.textContent = `Missing: /public/${p.logo}`;
+                parent.appendChild(div);
+              }
+            }}
+          />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* 👥 Team */}
       <section id="team" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
