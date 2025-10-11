@@ -42,8 +42,7 @@ const PARTNERS = [
   { name: "Cordia Studio", logo: "cordia.png", url: "https://cordia.studio" },
   { name: "Next Gen", logo: "nextgen.png", url: "https://nextgen-academy-three.vercel.app" },
   { name: "Team Cookie", logo: "teamcookie.png", url: "https://teamcookie.kr" },
-  { name: "BZCF", logo: "bzcf.png", url: "https://bzcf.org" },
-];
+ ];
 
 export default function Page() {
   return (
