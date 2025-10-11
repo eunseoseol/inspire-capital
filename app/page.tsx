@@ -25,7 +25,16 @@ const TEAM = [
       { label: "Instagram", href: "https://www.instagram.com/philiphyoo" },
     ],
   },
+  {
+    name: "Sungwoo Joe",
+    role: "Founder, GetGet / The Captain",
+    avatar: "/sungpaek.png",
+    links: [
+      { label: "Instagram", href: "https://www.instagram.com/sungpaek" },
+    ],
+  },
 ];
+
 
 const PARTNERS = [
   { name: "EO Studio", logo: "eo.png", url: "https://eostudio.io" },
