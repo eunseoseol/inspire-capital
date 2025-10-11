@@ -29,9 +29,7 @@ const TEAM = [
     name: "Sungwoo Joe",
     role: "Founder, GetGet / The Captain",
     avatar: "/sungpaek.png",
-    links: [
-      { label: "Instagram", href: "https://www.instagram.com/sungpaek" },
-    ],
+    links: [{ label: "Instagram", href: "https://www.instagram.com/sungpaek" }],
   },
 ];
 
@@ -50,7 +48,6 @@ const PARTNERS = [
 export default function Page() {
   return (
     <main className="min-h-screen bg-black text-white relative overflow-hidden">
-
       {/* 🎥 Hero Section — Manhattan Video */}
       <section className="relative h-[100vh] flex items-center justify-center text-center overflow-hidden z-0">
         <video
@@ -66,15 +63,9 @@ export default function Page() {
             type="video/mp4"
           />
         </video>
-
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
-
-        {/* Text */}
         <div className="relative z-10 px-6">
-          <h1
-            className="text-5xl sm:text-7xl font-extrabold leading-[1.05] text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.5)]"
-          >
+          <h1 className="text-5xl sm:text-7xl font-extrabold leading-[1.05] text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.5)]">
             Creator is <br />
             <span className="block mt-2">Eating the World</span>
           </h1>
@@ -92,8 +83,7 @@ export default function Page() {
           <p>2세대: Social Media — Facebook</p>
           <p>3세대: Creator Economy — You</p>
           <p className="mt-6 text-zinc-400">
-            기술의 패러다임은 점점 개인의 창조력으로 이동하고 있습니다.  
-            인스파이어 캐피탈은 그 변화의 최전선에서 크리에이터 기반 IP 비즈니스에 투자합니다.
+            기술의 패러다임은 점점 개인의 창조력으로 이동하고 있습니다. 인스파이어 캐피탈은 그 변화의 최전선에서 크리에이터 기반 IP 비즈니스에 투자합니다.
           </p>
         </div>
       </section>
@@ -105,59 +95,60 @@ export default function Page() {
           <div className="p-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 hover:border-[#00FFD1]/60 transition">
             <h3 className="text-xl font-semibold text-white">지구상에서 가장 젊은 벤처 캐피탈</h3>
             <p className="mt-3 text-zinc-400 text-sm">
-              차세대 창업가 세대를 위해 만들어진,  
-              세상에서 가장 빠르게 움직이는 투자 집단.
+              차세대 창업가 세대를 위해 만들어진, 세상에서 가장 빠르게 움직이는 투자 집단.
             </p>
           </div>
           <div className="p-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 hover:border-[#7FFF00]/60 transition">
             <h3 className="text-xl font-semibold text-white">오직 IP 비즈니스에만 투자</h3>
             <p className="mt-3 text-zinc-400 text-sm">
-              브랜드, 캐릭터, 콘텐츠 등  
-              창의성을 기반으로 한 지적 자산(IP)에 집중 투자.
+              브랜드, 캐릭터, 콘텐츠 등 창의성을 기반으로 한 지적 자산(IP)에 집중 투자.
             </p>
           </div>
           <div className="p-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 hover:border-[#00FFD1]/60 transition">
             <h3 className="text-xl font-semibold text-white">글로벌 진출의 발판</h3>
             <p className="mt-3 text-zinc-400 text-sm">
-              샌프란시스코, 뉴욕, 서울을 잇는  
-              글로벌 크리에이터 네트워크를 구축.
+              샌프란시스코, 뉴욕, 서울을 잇는 글로벌 크리에이터 네트워크를 구축.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 🚀 Backed By */}
+      {/* 🚀 Backed By (grid + fallback) */}
       <section className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
-        <div className="text-center mb-10">
+        <div className="text-center mb-6">
           <h2 className="text-3xl sm:text-4xl font-bold mb-2">Backed by</h2>
           <p className="text-zinc-400 text-sm">Builders. Dreamers. Doers.</p>
+          <p className="mt-2 text-xs text-zinc-500">
+            Loaded partners: <span className="font-mono">{PARTNERS.length}</span>
+          </p>
         </div>
 
-        <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 py-8">
-          {/* Gradient mask */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
-
-          {/* Auto-scroll track */}
-          <div
-            className="flex gap-16 whitespace-nowrap will-change-transform"
-            style={{ animation: "logo-scroll 50s linear infinite" }}
-          >
-            {[...PARTNERS, ...PARTNERS].map((p, i) => (
+        <div className="relative rounded-2xl border border-zinc-800 bg-zinc-900/60 px-4 py-6 overflow-x-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 place-items-center">
+            {PARTNERS.map((p) => (
               <a
-                key={`${p.name}-${i}`}
+                key={p.name}
                 href={p.url}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-20 items-center justify-center opacity-80 hover:opacity-100 transition"
+                className="w-[180px] h-[72px] flex items-center justify-center rounded-xl bg-black/30 border border-zinc-800 hover:border-[#00FFD1]/60 transition"
                 title={p.name}
               >
-                <Image
-                  src={`/logos/${p.logo}`}
+                <img
+                  src={`/${p.logo}`}
                   alt={p.name}
-                  width={160}
-                  height={60}
-                  className="object-contain"
+                  className="max-h-14 max-w-[160px] object-contain"
+                  onError={(e) => {
+                    const el = e.currentTarget;
+                    el.style.display = "none";
+                    const parent = el.parentElement;
+                    if (parent && !parent.querySelector(".logo-fallback")) {
+                      const div = document.createElement("div");
+                      div.className = "logo-fallback text-[10px] leading-tight text-red-400 p-2 text-center";
+                      div.textContent = `Missing: /public/${p.logo}`;
+                      parent.appendChild(div);
+                    }
+                  }}
                 />
               </a>
             ))}
